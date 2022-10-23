@@ -1,0 +1,23 @@
+spring:
+  redis:
+    sentinel:
+      master: redismaster
+      nodes : 26379,26380,26381
+    lettuce:
+      shutdown-timeout: 2000ms
+    password: redisauth
+    port: 26379
+    url: 127.0.0.1
+  cache:
+    type: redis
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/testdb
+    driverClassName: org.postgresql.Driver
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
